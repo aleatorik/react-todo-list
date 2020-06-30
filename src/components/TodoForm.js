@@ -1,6 +1,6 @@
 import React from 'react';
 
-function TodoForm() {
+function TodoForm({ addTodo }) {
   const [todo, setTodo] = useState({
     id: '',
     task: '',
@@ -11,8 +11,17 @@ function TodoForm() {
     setTodo({ ...todo, task: e.target.value });
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (todo.task.trim()) {
+      addTodo({ ...todo, id: uuid.v4() });
+      // reset task input
+      setTodo({ ...todo, task: '' });
+    }
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
         name="task"
         type="text"
