@@ -1,8 +1,8 @@
 {
-  "name": "react-todo-list",
+  "name": "react-todo-list-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://aleatorik.github.io/react-todo-list",
+  "homepage": "https://aleatorik.github.io/react-todo-list-app",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
