@@ -15,6 +15,7 @@ function TodoForm({ addTodo }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    // trim() gets rid of string whitespace
     if (todo.task.trim()) {
       addTodo({ ...todo, id: uuidv4() });
       // reset task input
