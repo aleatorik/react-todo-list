@@ -7,7 +7,7 @@ This project was bootstrapped with <a href="https://github.com/facebook/create-r
 ---
 
 <p align="center">
-<a href="https://aleatorik.github.io/task-list-app/"><strong>DEMO</strong></a>
+<a href="https://aleatorik.github.io/react-todo-list/"><strong>DEMO</strong></a>
 
 ![screenshot of main screen](./images/todo.png)
 
