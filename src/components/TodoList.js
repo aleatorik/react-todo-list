@@ -1,6 +1,6 @@
-import { List } from '@material-ui/core';
-import React from 'react';
-import Todo from './Todo';
+import React from "react";
+import { List } from "@material-ui/core";
+import Todo from "./Todo";
 
 function TodoList({ todos, toggleComplete, removeTodo }) {
   return (

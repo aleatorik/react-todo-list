@@ -1,10 +1,10 @@
-import Typography from '@material-ui/core/Typography';
-import React, { useEffect, useState } from 'react';
-import './App.css';
-import TodoForm from './components/TodoForm';
-import TodoList from './components/TodoList';
+import React, { useEffect, useState } from "react";
+import Typography from "@material-ui/core/Typography";
+import "./App.css";
+import TodoForm from "./components/TodoForm";
+import TodoList from "./components/TodoList";
 
-const LOCAL_STORAGE_KEY = 'react-todo-list-todos';
+const LOCAL_STORAGE_KEY = "react-todo-list-todos";
 
 function App() {
   const [todos, setTodos] = useState([]);
