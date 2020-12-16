@@ -4,14 +4,24 @@ import "./App.css";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 
-const LOCAL_STORAGE_KEY = "react-todo-list-todos";
+const LOCAL_STORAGE_KEY: any = "react-todo-list-todos";
 
-function App() {
-  const [todos, setTodos] = useState([]);
+interface ITodo {
+  todo: "";
+  completed: Boolean;
+  id: "";
+}
+
+export default function App(): JSX.Element {
+  const [todos, setTodos] = useState<ITodo[]>([]);
 
   useEffect(() => {
     // fires when app component mounts to the DOM
-    const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    const storageTodos: any = JSON.parse(
+      localStorage.getItem(LOCAL_STORAGE_KEY) || "{}"
+    );
+    // localStorage.getItem() can return either a string or null, whereas requires a string
+    // so the result of localStorage.getItem() should be tested
     if (storageTodos) {
       setTodos(storageTodos);
     }
@@ -21,12 +31,12 @@ function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
   }, [todos]);
 
-  function addTodo(todo) {
+  const addTodo = (todo: any): void => {
     // adds new todo to beginning of todos array
     setTodos([todo, ...todos]);
-  }
+  };
 
-  function toggleComplete(id) {
+  const toggleComplete = (id: string) => {
     setTodos(
       todos.map((todo) => {
         if (todo.id === id) {
@@ -38,11 +48,11 @@ function App() {
         return todo;
       })
     );
-  }
+  };
 
-  function removeTodo(id) {
+  const removeTodo = (id: string): void => {
     setTodos(todos.filter((todo) => todo.id !== id));
-  }
+  };
 
   return (
     <div className="App">
@@ -58,5 +68,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

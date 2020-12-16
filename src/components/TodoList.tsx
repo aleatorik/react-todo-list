@@ -2,12 +2,12 @@ import React from "react";
 import { List } from "@material-ui/core";
 import Todo from "./Todo";
 
-function TodoList({ todos, toggleComplete, removeTodo }) {
+const TodoList = ({ todos, toggleComplete, removeTodo }: any) => {
   return (
     <List>
-      {todos.map((todo) => (
+      {todos.map((todo: string, index: number) => (
         <Todo
-          key={todo.id}
+          key={index}
           todo={todo}
           removeTodo={removeTodo}
           toggleComplete={toggleComplete}
@@ -15,6 +15,6 @@ function TodoList({ todos, toggleComplete, removeTodo }) {
       ))}
     </List>
   );
-}
+};
 
 export default TodoList;

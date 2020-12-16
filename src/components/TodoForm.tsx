@@ -2,18 +2,13 @@ import React, { useState } from "react";
 import { Button, TextField } from "@material-ui/core";
 import { v4 as uuidv4 } from "uuid";
 
-function TodoForm({ addTodo }) {
+const TodoForm = ({ addTodo }: any) => {
   const [todo, setTodo] = useState({
     id: "",
     task: "",
-    completed: false,
   });
 
-  function handleTaskInputChange(e) {
-    setTodo({ ...todo, task: e.target.value });
-  }
-
-  function handleSubmit(e) {
+  const handleSubmit = (e: any): void => {
     e.preventDefault();
     // trim() gets rid of string whitespace
     if (todo.task.trim()) {
@@ -21,7 +16,11 @@ function TodoForm({ addTodo }) {
       // reset task input
       setTodo({ ...todo, task: "" });
     }
-  }
+  };
+
+  const handleTaskInputChange = (e: any): void => {
+    setTodo({ ...todo, task: e.target.value });
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -35,6 +34,6 @@ function TodoForm({ addTodo }) {
       <Button type="submit">submit</Button>
     </form>
   );
-}
+};
 
 export default TodoForm;
